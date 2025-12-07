@@ -9,10 +9,10 @@
 1. Run the following command in terminal:
 ```shell
 # For Windows (PowerShell)
-irm "https://dub.sh/crampack-win" | iex
+irm "https://dub.sh/crampack.ps1" | iex
 
 # For Linux and macOS (Bash)
-bash <(curl -fsSL "https://dub.sh/crampack-sh")
+bash <(curl -fsSL "https://dub.sh/crampack.sh")
 ```
 
 2. Select a prompted variant:
