@@ -68,14 +68,14 @@ while [ "$valid" = false ]; do
 done
 
 echo -e "[${YELLOW}~${RESET}] ${YELLOW}Downloading and installing ${INVERSE}$(basename "$url")${RESET}${YELLOW}...${RESET}"
-{
-    curl -s -L "$url" -o "$CONFIG_DIR/starship.toml"
+curl_output=$(curl -fsSL "$url" -o "$CONFIG_DIR/starship.toml" 2>&1)
+if [ $? -eq 0 ]; then
     echo -e "[${GREEN}+${RESET}] ${GREEN}Installation complete!${RESET}"
-} || {
-    echo -e "[${RED}x${RESET}] ${RED}Error downloading preset${RESET}"
+else
+    echo -e "[${RED}x${RESET}] ${RED}Error downloading preset: $curl_output${RESET}"
     echo -e "[${RED}x${RESET}] ${RED}Check your internet connection or repo URL.${RESET}"
     exit 1
-}
+fi
 
 if ! command -v starship >/dev/null 2>&1; then
     echo -e "\n[${YELLOW}!${RESET}] ${YELLOW}Reminder: Install Starship to activate the preset!${RESET}"
