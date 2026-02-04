@@ -8,7 +8,7 @@ CONFIG_DIR="$HOME/.config"
 RED="\033[31m"
 GREEN="\033[32m"
 YELLOW="\033[33m"
-BLUE="\033[34m"
+CYAN="\033[36m"
 BOLD="\033[1m"
 DIM="\033[2m"
 RESET="\033[0m"
@@ -33,10 +33,10 @@ fi
 
 valid=false
 while [ "$valid" = false ]; do
-    echo -e "[${BLUE}#${RESET}] Select preset to install:\n"
-    echo -e "[${BLUE}1${RESET}] Standard preset ${DIM}[${YELLOW}Requires Nerd Font${RESET}${DIM}]${RESET}"
-    echo -e "[${BLUE}2${RESET}] Plain text preset"
-    echo -ne "\n[${BLUE}#${RESET}] Enter your choice (${BLUE}1${RESET}-${BLUE}2${RESET}): "
+    echo -e "[${CYAN}#${RESET}] Select preset to install:\n"
+    echo -e "[${CYAN}1${RESET}] Standard preset ${DIM}[${YELLOW}Requires Nerd Font${RESET}${DIM}]${RESET}"
+    echo -e "[${CYAN}2${RESET}] Plain text preset"
+    echo -ne "\n[${CYAN}#${RESET}] Enter your choice (${CYAN}1${RESET}-${CYAN}2${RESET}): "
     read -r choice
 
     choice=$(echo "$choice" | xargs)
@@ -52,13 +52,13 @@ while [ "$valid" = false ]; do
             url="$BASE_URL/themes/crampack.toml"
             valid=true
             clear
-            echo -e "[${BLUE}#${RESET}] ${BLUE}Selected ${INVERSE}Standard${RESET} ${BLUE}preset${RESET}"
+            echo -e "[${CYAN}#${RESET}] ${CYAN}Selected ${INVERSE}Standard${RESET} ${CYAN}preset${RESET}"
         ;;
         2)
             url="$BASE_URL/themes/crampack-plain-text.toml"
             valid=true
             clear
-            echo -e "[${BLUE}#${RESET}] ${BLUE}Selected ${INVERSE}Plain text${RESET} ${BLUE}preset${RESET}"
+            echo -e "[${CYAN}#${RESET}] ${CYAN}Selected ${INVERSE}Plain text${RESET} ${CYAN}preset${RESET}"
         ;;
         *)
             clear

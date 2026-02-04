@@ -6,7 +6,7 @@ $CONFIG_DIR = "$HOME\.config"
 $RED = "[31m"
 $GREEN = "[32m"
 $YELLOW = "[33m"
-$BLUE = "[34m"
+$CYAN = "[36m"
 $BOLD = "[1m"
 $DIM = "[2m"
 $RESET = "[0m"
@@ -32,10 +32,10 @@ if (-not (Test-Path $CONFIG_DIR)) {
 
 $valid = $false
 while (-not $valid) {
-  Write-Host "[${BLUE}`#${RESET}] Select preset to install:`n"
-  Write-Host "[${BLUE}1${RESET}] Standard preset ${DIM}[${YELLOW}Requires Nerd Font${RESET}${DIM}]${RESET}"
-  Write-Host "[${BLUE}2${RESET}] Plain text preset"
-  $choice = Read-Host "`n[${BLUE}`#${RESET}] Enter your choice (${BLUE}1${RESET}-${BLUE}2${RESET})"
+  Write-Host "[${CYAN}`#${RESET}] Select preset to install:`n"
+  Write-Host "[${CYAN}1${RESET}] Standard preset ${DIM}[${YELLOW}Requires Nerd Font${RESET}${DIM}]${RESET}"
+  Write-Host "[${CYAN}2${RESET}] Plain text preset"
+  $choice = Read-Host "`n[${CYAN}`#${RESET}] Enter your choice (${CYAN}1${RESET}-${CYAN}2${RESET})"
 
   $choice = $choice.Trim()
 
@@ -50,13 +50,13 @@ while (-not $valid) {
       $url = "$BASE_URL/themes/crampack.toml"
       $valid = $true
       Clear-Host
-      Write-Host "[${BLUE}`#${RESET}] ${BLUE}Selected ${INVERSE}Standard${RESET} ${BLUE}preset${RESET}"
+      Write-Host "[${CYAN}`#${RESET}] ${CYAN}Selected ${INVERSE}Standard${RESET} ${CYAN}preset${RESET}"
     }
     "2" {
       $url = "$BASE_URL/themes/crampack-plain-text.toml"
       $valid = $true
       Clear-Host
-      Write-Host "[${BLUE}`#${RESET}] ${BLUE}Selected ${INVERSE}Plain text${RESET} ${BLUE}preset${RESET}"
+      Write-Host "[${CYAN}`#${RESET}] ${CYAN}Selected ${INVERSE}Plain text${RESET} ${CYAN}preset${RESET}"
     }
     default {
       Clear-Host
