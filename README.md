@@ -9,10 +9,10 @@
 1. Run the following command in terminal:
 ```shell
 # For Windows (PowerShell)
-irm "https://cdn.jsdelivr.net/gh/Noktomezo/CrampackForStarship@main/scripts/setup.ps1" | iex
+irm "https://git.new/crampack-ps" | iex
 
 # For Linux and macOS (Bash)
-bash <(curl -fsSL "https://cdn.jsdelivr.net/gh/Noktomezo/CrampackForStarship@main/scripts/setup.sh")
+bash <(curl -fsSL "https://git.new/crampack-sh")
 ```
 
 2. Select a prompted variant:
