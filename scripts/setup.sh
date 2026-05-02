@@ -37,14 +37,15 @@ while [ "$valid" = false ]; do
     echo -e "[${CYAN}1${RESET}] Standard preset ${DIM}[${YELLOW}Requires Nerd Font${RESET}${DIM}]${RESET}"
     echo -e "[${CYAN}2${RESET}] Plain text preset"
     echo -e "[${CYAN}3${RESET}] Emoji preset"
-    echo -ne "\n[${CYAN}#${RESET}] Enter your choice (${CYAN}1${RESET}-${CYAN}3${RESET}): "
+    echo -e "[${CYAN}4${RESET}] Full text preset"
+    echo -ne "\n[${CYAN}#${RESET}] Enter your choice (${CYAN}1${RESET}-${CYAN}4${RESET}): "
     read -r choice
 
     choice=$(echo "$choice" | xargs)
 
     if [ -z "$choice" ]; then
         clear
-        echo -e "[${RED}x${RESET}] ${RED}No input provided. Please enter 1, 2 or 3.${RESET}\n"
+        echo -e "[${RED}x${RESET}] ${RED}No input provided. Please enter 1, 2, 3 or 4.${RESET}\n"
         continue
     fi
 
@@ -67,9 +68,15 @@ while [ "$valid" = false ]; do
             clear
             echo -e "[${CYAN}#${RESET}] ${CYAN}Selected ${INVERSE}Emoji${RESET} ${CYAN}preset${RESET}"
         ;;
+        4)
+            url="$BASE_URL/themes/crampack-full-text.toml"
+            valid=true
+            clear
+            echo -e "[${CYAN}#${RESET}] ${CYAN}Selected ${INVERSE}Full text${RESET} ${CYAN}preset${RESET}"
+        ;;
         *)
             clear
-            echo -e "[${RED}x${RESET}] ${RED}Invalid choice ${INVERSE}$choice${RESET}${RED}. Please enter 1, 2 or 3.${RESET}\n"
+            echo -e "[${RED}x${RESET}] ${RED}Invalid choice ${INVERSE}$choice${RESET}${RED}. Please enter 1, 2, 3 or 4.${RESET}\n"
         ;;
     esac
 done

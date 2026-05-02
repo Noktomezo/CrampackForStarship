@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./assets/thumbnail.svg" alt="Crampack For Starship" width="100%">
   <h3>🎒 Crampack For <a href="https://starship.rs/">Starship 🚀</a></h1>
-  <p style="text-align: center;">A clean, vivid prompt preset for Starship, rethinking the classic Linux/BSD/macOS default terminal prompt - but extended for modern workflows. It delivers high-contrast readability in a compact, vibrant layout, showing all the project info in comprehensive format. Provides three (project affection indicator) variants: Nerd Font icons, plain text, or emoji.</p>
+  <p style="text-align: center;">A clean, vivid prompt preset for Starship, rethinking the classic Linux/BSD/macOS default terminal prompt - but extended for modern workflows. It delivers high-contrast readability in a compact, vibrant layout, showing all the project info in comprehensive format. Provides four (project affection indicator) variants: Nerd Font icons, plain text, emoji, or full text.</p>
 </div>
 
 ## 📦 Installation
@@ -19,6 +19,7 @@ bash <(curl -fsSL "https://git.new/crampack-sh")
 - 1: Standard (Nerd Font) — `crampack.toml`
 - 2: Plain text (Unicode Symbols) — `crampack-plain-text.toml`
 - 3: Emoji — `crampack-emoji.toml`
+- 4: Full text — `crampack-full-text.toml`
 
 3. Reload shell (don't needed actually) to see the result.
 
@@ -44,6 +45,9 @@ To change palette, edit `palette` key in `~/.config/starship.toml` to one of the
   </li>
   <li>
   <strong>Emoji</strong>: colorful emoji (e.g.: ✅ for staged, ✏️ for modified, ⬆️ for ahead).
+  </li>
+  <li>
+  <strong>Full text</strong>: full Git state words (e.g.: staged, modified, ahead).
   </li>
 </ul>
 

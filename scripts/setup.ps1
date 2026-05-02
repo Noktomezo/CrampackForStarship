@@ -36,13 +36,14 @@ while (-not $valid) {
   Write-Host "[${CYAN}1${RESET}] Standard preset ${DIM}[${YELLOW}Requires Nerd Font${RESET}${DIM}]${RESET}"
   Write-Host "[${CYAN}2${RESET}] Plain text preset"
   Write-Host "[${CYAN}3${RESET}] Emoji preset"
-  $choice = Read-Host "`n[${CYAN}`#${RESET}] Enter your choice (${CYAN}1${RESET}-${CYAN}3${RESET})"
+  Write-Host "[${CYAN}4${RESET}] Full text preset"
+  $choice = Read-Host "`n[${CYAN}`#${RESET}] Enter your choice (${CYAN}1${RESET}-${CYAN}4${RESET})"
 
   $choice = $choice.Trim()
 
   if ([string]::IsNullOrEmpty($choice)) {
     Clear-Host
-    Write-Host "[${RED}x${RESET}] ${RED}No input provided. Please enter 1, 2 or 3.${RESET}`n"
+    Write-Host "[${RED}x${RESET}] ${RED}No input provided. Please enter 1, 2, 3 or 4.${RESET}`n"
     continue
   }
 
@@ -65,9 +66,15 @@ while (-not $valid) {
       Clear-Host
       Write-Host "[${CYAN}`#${RESET}] ${CYAN}Selected ${INVERSE}Emoji${RESET} ${CYAN}preset${RESET}"
     }
+    "4" {
+      $url = "$BASE_URL/themes/crampack-full-text.toml"
+      $valid = $true
+      Clear-Host
+      Write-Host "[${CYAN}`#${RESET}] ${CYAN}Selected ${INVERSE}Full text${RESET} ${CYAN}preset${RESET}"
+    }
     default {
       Clear-Host
-      Write-Host "[${RED}x${RESET}] ${RED}Invalid choice ${INVERSE}${choice}${RESET}${RED}. Please enter 1, 2 or 3.${RESET}`n"
+      Write-Host "[${RED}x${RESET}] ${RED}Invalid choice ${INVERSE}${choice}${RESET}${RED}. Please enter 1, 2, 3 or 4.${RESET}`n"
     }
   }
 }
